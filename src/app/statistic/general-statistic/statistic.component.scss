@@ -1,0 +1,16 @@
+@import '../../../assets/vars';
+
+li.stat-item {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  color: #333;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  &.positive {
+    background: $positive;
+  }
+  &.negative {
+    background: $negative;
+  }
+}

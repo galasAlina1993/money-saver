@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './assets/vars';
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+body {
+  z-index: -1;
+  color: $primary-color;
+}
+.row {
+  margin: 0 !important;
+}

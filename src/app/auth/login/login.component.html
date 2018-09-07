@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 >Login Form</h1>
+  <form #loginForm="ngForm"
+  (ngSubmit)="onSubmit($event)">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name"  name="name" minlength="4" [(ngModel)]="model.name" appForbiddenName="bob" #name="ngModel" required>
+    <div [hidden]="name.valid || name.pristine"
+         class="alert alert-danger">
+      <div *ngIf="name.errors && (name.errors || {}).required">
+        Name is required.
+      </div>
+      <div *ngIf="name.errors && (name.errors || {}).minlength">
+        Name is too short.
+      </div>
+    </div>
+    {{name.errors | json}}
+  </div>
+  <div class="form-group">
+    <label for="login">Login</label>
+    <input type="text" class="form-control" id="login" name="login"  [(ngModel)]="model.login" required>
+  </div>
+
+  <div class="form-group">
+    <label for="password">password</label>
+    <input type="text" class="form-control" id="password" name="password"  [(ngModel)]="model.password" required #spy>
+
+  </div>
+{{loginForm.valid}}
+  <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Submit</button>
+  <button type="button" class="btn btn-primary" (click)="clearForm(loginForm);  loginForm.reset()" >Reset</button>
+
+  </form>
+
+  {{diagnostic}}
+</div>
