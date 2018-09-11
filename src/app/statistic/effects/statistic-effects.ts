@@ -2,10 +2,16 @@ import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {Observable} from 'rxjs';
 import {Action} from '@ngrx/store';
-import {GetStatisticExpandedById, GetStatisticShort, GetStatisticShortSuccess, StatisticActionTypes} from '../actions/statistic-actions';
+import {
+  GetStatisticExpandedById,
+  GetStatisticExpandedByIdSuccess,
+  GetStatisticShort,
+  GetStatisticShortSuccess,
+  StatisticActionTypes
+} from '../actions/statistic-actions';
 import {catchError, exhaustMap, map} from 'rxjs/operators';
 import {StatisticService} from '../../shared/services/statistic.service';
-import {IMonthShort} from '../../shared/models/statistic.model';
+import {IMonthDetail, IMonthShort} from '../../shared/models/statistic.model';
 
 const toPayload = <T>(action: { payload: T }) => action.payload;
 
@@ -25,7 +31,7 @@ export class StatisticsEffects {
     ofType<GetStatisticExpandedById>(StatisticActionTypes.GetStatisticExpandedById),
     map(toPayload),
     exhaustMap(payload => this.statisticService.getStatisticExpanded(payload).pipe(
-      map((statistics: IMonthShort[]) => new GetStatisticShortSuccess(statistics) ),
+      map((statistic: IMonthDetail) => new GetStatisticExpandedByIdSuccess(statistic)),
       catchError((e) => { throw new Error(e) })
     ))
   );
