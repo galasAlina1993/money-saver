@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <ul>
+    <!-- | params:'save':paramval-->
+    <li class="stat-item" *ngFor="let item of statistic$ | async; index as i;" [ngClass]="{'positive': item.save, 'negative': !item.save}">
+
+    <div class="month">{{item.date | date: ' MMMM, yyyy'}}</div>
+      <div class="amount">{{item.amount | currency: 'UAH': 'symbol-narrow'}}</div>
+      <div class="positive">{{item.positiveAreas}}</div>
+      <div class="negative">{{item.negativeAreas}}</div>
+    </li>
+  </ul>
+</div>
+<hr>
+
+<div class="result">
+  <!--<p>Всего за {{(statistic | async)?.length}} месяцев {{countTotal()}} грн</p>-->
+</div>
+

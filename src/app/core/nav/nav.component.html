@@ -1,0 +1,8 @@
+<nav>
+  <ul >
+    <li *ngFor="let b of buttons">
+      <app-button (buttonPressed)="btnHandler($event)" [data]="b">
+      </app-button>
+    </li>
+  </ul>
+</nav>

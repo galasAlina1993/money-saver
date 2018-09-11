@@ -1,0 +1,25 @@
+@import '../../../assets/vars';
+
+:host .container-fluid {
+  background-color: $header-bg;
+  position: relative;
+  height: 70px;
+  line-height: 70px;
+
+  .title {
+    text-align: center;
+  }
+  .cabinet {
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    i {
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+}
+
+

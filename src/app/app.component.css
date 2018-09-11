@@ -1,0 +1,9 @@
+.wrapper {
+  background: url(http://ic.pics.livejournal.com/oldvladikavkaz/39917544/1128353/1128353_original.jpg);
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  position: fixed;
+  opacity: 0.3;
+  z-index: -1;
+}
