@@ -1,7 +1,7 @@
 <div class="container">
   <h1 >Login Form</h1>
   <form #loginForm="ngForm"
-  (ngSubmit)="onSubmit($event)">
+  (ngSubmit)="onSubmit($event, loginForm)">
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name"  name="name" minlength="4" [(ngModel)]="model.name" appForbiddenName="bob" #name="ngModel" required>
