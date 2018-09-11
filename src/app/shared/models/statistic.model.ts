@@ -1,4 +1,5 @@
 export interface IMonthShort {
+  id: number;
   date: Date | string;
   save: boolean;
   amount: number;

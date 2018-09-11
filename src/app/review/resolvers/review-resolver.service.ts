@@ -9,7 +9,7 @@ export class ReviewResolver implements Resolve<Observable<string>> {
 
   resolve() {
     return of('Hello From Resolver!').pipe(
-      delay(2000)
+      delay(0)
     );
   }
 }

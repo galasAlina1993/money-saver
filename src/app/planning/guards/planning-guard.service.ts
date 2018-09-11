@@ -7,16 +7,16 @@ export class PlanningGuard implements CanActivate, CanActivateChild, CanDeactiva
 
   canActivate() {
     console.log('i am checking to see if you are logged in');
-    return prompt('Enter password') === '0000';
+    return true;
   }
 
   canActivateChild() {
     console.log('checking child route access');
-    return prompt('Enter password') === '1111';
+    return true;
   }
 
   canDeactivate(component: PlanningFormComponent ) {
-    return prompt('Enter password') === '0000';
+    return true;
   }
 
 }

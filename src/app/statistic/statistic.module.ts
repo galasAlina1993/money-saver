@@ -8,8 +8,9 @@ import {StoreModule} from '@ngrx/store';
 import {reducers} from './reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {StatisticsEffects} from './effects/statistic-effects';
+import {StatisticInfoComponent} from './statistic-info/statistic-info.component';
 
-const Components = [StatisticComponent];
+const Components = [StatisticComponent, StatisticInfoComponent];
 const Exports = [StatisticComponent];
 const Providers = [StatisticService];
 @NgModule({
