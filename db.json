@@ -82,7 +82,14 @@
       "amount":4000,
       "positiveAreas":["Непредвиденные расходы","Питание","Транспорт"],
       "negativeAreas":["Бытовые расходы","Коммунальные"]
-    }]
+    }],
+  "users": [
+    {
+      "login": "admin",
+      "password": "0000",
+      "token": "X12BQQAFDSFSADSFSDF"
+    }
+  ]
 }
 
 
