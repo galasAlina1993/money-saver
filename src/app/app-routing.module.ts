@@ -8,7 +8,7 @@ const routesWithLazyLoading: Routes = [
   { path: 'statistic', loadChildren: './statistic/statistic.module#StatisticModule', canActivate: [AuthGuard]}, // Лениво грузим StatisticModule
   { path: 'review', loadChildren: '../app/review/review.module#ReviewModule', canActivate: [AuthGuard] },
   { path: 'planning', loadChildren: '../app/planning/planning.module#PlanningModule', canActivate: [AuthGuard]},
-  { path: 'auth', loadChildren: '../app/auth/auth.module#AuthModule'},
+  { path: 'auth', loadChildren: '../app/auth/auth.module#AuthModule', canActivate: [AuthGuard]},
   { path: '**', component: PageNotFoundComponent}
 ];
 
