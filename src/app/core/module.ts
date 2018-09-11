@@ -9,13 +9,14 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 import {MoneyTooltipComponent} from './tooltip-directive/tooltip.component';
 import {ToolTipDirective} from './tooltip-directive/tooltip.directive';
+import {HttpClientModule} from '@angular/common/http';
 
 
 const Components = [HeaderComponent, NavComponent, ButtonComponent, PageNotFoundComponent, ToolTipDirective, MoneyTooltipComponent];
 const Exports = [HeaderComponent, NavComponent, PageNotFoundComponent, ToolTipDirective];
 
 @NgModule({
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HttpClientModule],
   declarations: Components,
   exports: Exports,
   entryComponents: [MoneyTooltipComponent]

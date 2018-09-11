@@ -7,6 +7,8 @@ import {catchError, exhaustMap, map} from 'rxjs/operators';
 import {StatisticService} from '../../shared/services/statistic.service';
 import {IMonthShort} from '../../shared/models/statistic.model';
 
+const toPayload = <T>(action: { payload: T }) => action.payload;
+
 @Injectable()
 export class StatisticsEffects {
 

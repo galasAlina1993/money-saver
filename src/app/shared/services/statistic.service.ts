@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { IMonthShort } from '../models/statistic.model';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class StatisticService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {} // inject http client
+
+
+
+
 
   public getStatisticShort () {
     return of([
