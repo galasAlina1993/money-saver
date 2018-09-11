@@ -1,7 +1,7 @@
 <div class="wrapper">
   <ul>
     <!-- | params:'save':paramval-->
-    <li class="stat-item" *ngFor="let item of statistic$ | async; index as i;" [ngClass]="{'positive': item.save, 'negative': !item.save}" routerLink="/{{item.id}}/info">
+    <li class="stat-item" *ngFor="let item of statistic$ | async; index as i;" [ngClass]="{'positive': item.save, 'negative': !item.save}" routerLink="/statistic/{{item.id}}/info">
       <div class="month">{{item.date | date: ' MMMM, yyyy'}}</div>
       <div class="amount">{{item.amount | currency: 'UAH': 'symbol-narrow'}}</div>
       <div class="positive">{{item.positiveAreas}}</div>

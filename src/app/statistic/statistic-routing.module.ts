@@ -5,8 +5,8 @@ import { StatisticComponent } from './general-statistic/statistic.component';
 import {StatisticInfoComponent} from './statistic-info/statistic-info.component';
 
 const routes: Routes = [
-  { path: '', component: StatisticComponent },
-  {path: '/:id/info', component: StatisticInfoComponent},
+  { path: '', component: StatisticComponent, pathMatch: 'full'},
+  { path: ':id/info', component: StatisticInfoComponent},
   { path: '**', component: StatisticComponent }
 ];
 
