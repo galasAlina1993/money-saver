@@ -19,11 +19,7 @@ export class StatisticComponent implements OnInit{
 
   constructor(private statisticService: StatisticService,
               private store: Store<fromStatistics.State>) {
-    // this.statistic$ = this.statisticService.getStatisticShort();
     this.statistic$ = store.pipe(select(fromStatistics.getStatisticsSelector));
-    //   .subscribe((res) => {
-    //   this.statistic = res;
-    // });
   }
 
   ngOnInit() {

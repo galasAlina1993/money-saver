@@ -1,49 +1,19 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { IMonthShort } from '../models/statistic.model';
+import {IMonthDetail, IMonthShort} from '../models/statistic.model';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable()
 export class StatisticService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {} // inject http client provider;
 
   public getStatisticShort () {
-    return of([
-      {
-        date: '1517436000000',
-        save: true,
-        amount: 1500,
-        positiveAreas: ['Непредвиденные расходы', 'Питание', 'Транспорт'],
-        negativeAreas: ['Бытовые расходы', 'Коммунальные']
-      },
-      {
-        date: '1519855200000',
-        save: false,
-        amount: 1000,
-        positiveAreas: ['Непредвиденные расходы', 'Питание', 'Транспорт'],
-        negativeAreas: ['Бытовые расходы', 'Коммунальные']
-      },
-      {
-        date: '1522530000000',
-        save: true,
-        amount: 1000,
-        positiveAreas: ['Непредвиденные расходы', 'Питание', 'Транспорт'],
-        negativeAreas: ['Бытовые расходы', 'Коммунальные']
-      },
-      {
-        date: '1525122000000',
-        save: false,
-        amount: 2000,
-        positiveAreas: ['Непредвиденные расходы', 'Питание', 'Транспорт'],
-        negativeAreas: ['Бытовые расходы', 'Коммунальные']
-      },
-      {
-        date: '1527800400000',
-        save: true,
-        amount: 4000,
-        positiveAreas: ['Непредвиденные расходы', 'Питание', 'Транспорт'],
-        negativeAreas: ['Бытовые расходы', 'Коммунальные']
-      }
-    ]);
+    return this.http.get<IMonthShort[]>('http://localhost:3000/statisticShort'); //[HTTP][METHOD]([URL], [OPTIONS]?);
+  }
+
+  public getStatisticExpanded(id: number) {
+    // return this.http.get<IMonthDetail>(`http://localhost:3000/statisticFull/${id}`); // get by id;
+    const params = new HttpParams().set('id', id.toString());
+    return this.http.get<IMonthDetail>(`http://localhost:3000/statisticFull`, {params}); // get by query param id;
   }
 }

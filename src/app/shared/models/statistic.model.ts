@@ -1,4 +1,5 @@
 export interface IMonthShort {
+  id: number;
   date: Date | string;
   save: boolean;
   amount: number;
@@ -7,8 +8,8 @@ export interface IMonthShort {
 }
 
 export interface IMonthDetail extends IMonthShort {
-  dailyStatistic: IDailyItem[];
-  areaStatistic: IAreaItem[];
+  dailyStatistic?: IDailyItem[];
+  areaStatistic?: IAreaItem[];
 }
 
 export interface IDailyItem {

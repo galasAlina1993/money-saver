@@ -1,9 +1,11 @@
 import {Action} from '@ngrx/store';
-import {IMonthShort} from '../../shared/models/statistic.model';
+import {IMonthDetail, IMonthShort} from '../../shared/models/statistic.model';
 
 export enum StatisticActionTypes {
-  GetStatisticShort = '[TravelTypes] Load TravelTypes requested',
-  GetStatisticShortSuccess = '[TravelTypes] Load TravelTypes succeeded',
+  GetStatisticShort = '[TravelTypes] Load Statistic requested',
+  GetStatisticShortSuccess = '[TravelTypes] Load Statistic succeeded',
+  GetStatisticExpandedById = '[TravelTypes] Load Statistic expanded by id requested',
+  GetStatisticExpandedByIdSuccess = '[TravelTypes] Load Statistic expanded by id succeeded',
 }
 
 export class GetStatisticShort implements Action {
@@ -16,6 +18,18 @@ export class GetStatisticShortSuccess implements Action {
   constructor(public payload: IMonthShort[]) {}
 }
 
-export type StstisticActionsUnion =
+export class GetStatisticExpandedById implements Action {
+  readonly type = StatisticActionTypes.GetStatisticExpandedById;
+  constructor(public payload: number) {}
+}
+
+export class GetStatisticExpandedByIdSuccess implements Action {
+  readonly type = StatisticActionTypes.GetStatisticExpandedByIdSuccess;
+  constructor(public payload: IMonthDetail) {}
+}
+
+export type StatisticActionsUnion =
   | GetStatisticShort
-  | GetStatisticShortSuccess;
+  | GetStatisticShortSuccess
+  | GetStatisticExpandedById
+  | GetStatisticExpandedByIdSuccess;
