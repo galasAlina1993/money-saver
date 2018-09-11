@@ -8,8 +8,8 @@ export interface IMonthShort {
 }
 
 export interface IMonthDetail extends IMonthShort {
-  dailyStatistic: IDailyItem[];
-  areaStatistic: IAreaItem[];
+  dailyStatistic?: IDailyItem[];
+  areaStatistic?: IAreaItem[];
 }
 
 export interface IDailyItem {

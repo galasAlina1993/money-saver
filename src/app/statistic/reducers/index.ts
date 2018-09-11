@@ -20,3 +20,7 @@ export const getStatisticsSelector = createSelector(
   getStatisticState,
   state => state.statisticData.statistics
 );
+export const getStatisticFullSelector = createSelector(
+  getStatisticState,
+  state => state.statisticData.statisticFull
+);
